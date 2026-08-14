@@ -2,7 +2,8 @@ import axios from 'axios';
 
 // Automatically uses relative /api (proxied by Vite to port 3002) for localhost, LAN, and Localtunnel
 const apiClient = axios.create({
-  baseURL: '/api',
+  baseURL:
+import.meta.env.VITE_API_URL || "/api",   
   withCredentials: true,
 });
 
