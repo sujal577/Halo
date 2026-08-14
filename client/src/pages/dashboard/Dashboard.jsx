@@ -14,7 +14,7 @@ import {
 import apiClient from "../../apiClient";
 import { useUser } from "../../context/UserContextApi";
 import { useNavigate } from "react-router-dom";
-import SocketContext from "../socket/SocketContext";
+import SocketContext from "../socket/socketContext";
 import { useWebRTC } from "../../hooks/useWebRTC";
 import CallingModal from "../../components/CallingModal";
 import IncomingCallModal from "../../components/IncomingCallModal";
