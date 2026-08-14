@@ -1,0 +1,57 @@
+﻿
+> client@0.0.0 lint
+> eslint .
+
+
+C:\Users\sujal\OneDrive\Desktop\videoCall\client\src\context\UserContextApi.jsx
+  16:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  14 |
+  15 |     useEffect(() => {
+> 16 |         setLoading(true);
+     |         ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  17 |         const storedUser = localStorage.getItem("userData");
+  18 |         console.log("Fetched user from localStorage:", storedUser);
+  19 |         if (storedUser) {  react-hooks/set-state-in-effect
+  39:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        react-refresh/only-export-components
+
+C:\Users\sujal\OneDrive\Desktop\videoCall\client\src\main.jsx
+  1:10  error  'StrictMode' is defined but never used  no-unused-vars
+
+C:\Users\sujal\OneDrive\Desktop\videoCall\client\src\pages\auth\Auth.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\sujal\OneDrive\Desktop\videoCall\client\src\pages\auth\IsLogin.jsx
+  1:8  error  'React' is defined but never used  no-unused-vars
+
+C:\Users\sujal\OneDrive\Desktop\videoCall\client\src\pages\dashboard\Dashboard.jsx
+    1:8   error  'React' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       no-unused-vars
+   13:10  error  'loading' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            no-unused-vars
+   36:5   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  34 |
+  35 |   useEffect(() => {
+> 36 |     allusers();
+     |     ^^^^^^^^ Avoid calling setState() directly within an effect
+  37 |   }, []);
+  38 |
+  39 |   const handleLogout = async () => {  react-hooks/set-state-in-effect
+   54:9   error  'handleSelectedUser' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 no-unused-vars
+   55:11  error  'selected' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           no-unused-vars
+  102:30  error  'handelSelectedUser' is not defined                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     no-undef
+  110:18  error  'isOnlineUser' is not defined                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           no-undef
+
+Γ£û 12 problems (12 errors, 0 warnings)
+
